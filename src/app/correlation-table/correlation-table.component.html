@@ -1,0 +1,42 @@
+<body>
+<h2> Correlation Table </h2>
+<div class="table-div">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th role="button" (click)="sortTable(0)" scope="col" >Input</th>
+        <th role="button" (click)="sortTable(1)" scope="col">Corr</th>
+        <th role="button" (click)="sortTable(2)" scope="col">Abs(Corr)</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of table_list; track table_list) {
+      <tr>
+        @for (value of row; track table_list) {
+          <td>
+            {{value}}
+          </td>
+        }
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>
+<div class="row output-dropdown">
+  <div class="col-6 left-label">
+    <p> Output: </p>
+  </div>
+  <div class="col-6">
+  <div class="dropdown right-feature">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      {{ selected_output }}
+    </button>
+    <ul class="dropdown-menu">
+      @for (output of outputs; track outputs) {
+        <li><a class="dropdown-item" role="button" (click)="updateOutput(output)">{{ output }}</a></li>
+      }
+    </ul>
+  </div>
+</div>
+</div>
+</body>

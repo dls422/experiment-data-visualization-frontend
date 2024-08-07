@@ -1,0 +1,34 @@
+
+<body>
+  <h2>Input vs Output Scatterplot</h2>
+  <div echarts [options]="options" class="demo-chart"></div>
+  <div class="row">
+    <div class="col-5">
+    <div class="dropdown left-feature">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        {{ selected_input }}
+      </button>
+      <ul class="dropdown-menu">
+        @for (input of inputs; track inputs) {
+          <li><a class="dropdown-item" role="button" (click)="updateInput(input)">{{ input }}</a></li>
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="col-2 text-label">
+    <p> Vs </p>
+  </div>
+  <div class="col-5">
+      <div class="dropdown right-feature">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ selected_output }}
+        </button>
+        <ul class="dropdown-menu">
+          @for (output of outputs; track outputs) {
+            <li><a class="dropdown-item" role="button" (click)="updateOutput(output)">{{ output }}</a></li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>

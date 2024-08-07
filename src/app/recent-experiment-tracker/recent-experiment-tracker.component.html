@@ -1,0 +1,21 @@
+<body>
+  <h2> Recent Experiment Tracker </h2>
+  <h3> {{recent}} </h3>
+  <div class="row">
+    <div class="col-7 tracker-text">
+  <p> new experiments in the last </p>
+</div>
+<div class="col-5 tracker-dropdown">
+  <div class="dropdown left-feature">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      {{current_mode}}
+    </button>
+    <ul class="dropdown-menu">
+      @for (mode of modes; track modes) {
+        <li><a class="dropdown-item" role="button" (click)="updateRecent(mode)">{{ mode }}</a></li>
+      }
+    </ul>
+  </div>
+</div>
+</div>
+</body>
